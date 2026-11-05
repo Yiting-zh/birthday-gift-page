@@ -31,9 +31,9 @@ envelope?.addEventListener('click', () => {
   const isOpened = envelope.classList.toggle('is-opened');
   envelopeScene?.classList.toggle('is-opened', isOpened);
   envelope.setAttribute('aria-expanded', String(isOpened));
-  envelope.setAttribute('aria-label', `点击${isOpened ? '合上' : '打开'}生日信封`);
+  envelope.setAttribute('aria-label', `点击${isOpened ? '合上' : '查看'}信件`);
   if (envelopeHint) {
-    envelopeHint.textContent = `点击${isOpened ? '合上' : '打开'}信封`;
+    envelopeHint.textContent = `点击${isOpened ? '合上' : '查看'}信件`;
   }
 });
 
