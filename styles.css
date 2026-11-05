@@ -2534,3 +2534,23 @@ body {
     text-align: left;
   }
 }
+
+.sealed-gift-section {
+  min-height: 390px;
+  padding-block: 32px 38px;
+}
+
+.video-gift {
+  padding-top: 32px;
+}
+
+@media (max-width: 560px) {
+  .sealed-gift-section {
+    min-height: 340px;
+    padding-block: 20px 28px;
+  }
+
+  .video-gift {
+    padding-top: 20px;
+  }
+}
