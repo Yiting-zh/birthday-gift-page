@@ -51,7 +51,6 @@ const modal = document.getElementById('videoModal');
 const openVideoButton = document.getElementById('openVideo');
 const closeModalButton = document.getElementById('closeModal');
 const memoryVideo = document.getElementById('memoryVideo');
-const videoHelp = document.querySelector('.video-help');
 
 const openModal = () => {
   if (!modal) return;
@@ -73,12 +72,6 @@ closeModalButton?.addEventListener('click', closeModal);
 
 modal?.addEventListener('click', (event) => {
   if (event.target === modal) closeModal();
-});
-
-memoryVideo?.addEventListener('error', () => {
-  if (videoHelp) {
-    videoHelp.textContent = '暂时找不到视频。请将视频命名为 memory-video.mp4，并放在网页同一文件夹后重新打开。';
-  }
 });
 
 window.addEventListener('keydown', (event) => {
