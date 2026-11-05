@@ -2410,8 +2410,12 @@ body {
   flex: none;
   width: min(100%, 430px);
   min-height: 0;
+  aspect-ratio: 3 / 2;
+  margin: 10px auto 0;
+}
+
+.envelope-scene.is-opened {
   aspect-ratio: 4 / 5;
-  margin: 18px auto 0;
 }
 
 .envelope-toggle {
@@ -2451,6 +2455,7 @@ body {
 .envelope-image-closed {
   opacity: 1;
   transform: translateY(0) scale(1);
+  object-position: center top;
 }
 
 .envelope-image-open {
@@ -2481,7 +2486,7 @@ body {
       "title envelope"
       "copy envelope"
       "route envelope"
-      "hint envelope";
+      "hint hint";
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: clamp(40px, 6vw, 80px);
     align-content: center;
@@ -2529,15 +2534,23 @@ body {
 
   .scroll-hint {
     grid-area: hint;
-    align-self: start;
+    justify-self: center;
     margin: 8px 0 0;
-    text-align: left;
+    text-align: center;
   }
 }
 
 .sealed-gift-section {
   min-height: 390px;
   padding-block: 32px 38px;
+}
+
+.gift-intro {
+  margin: 0 0 18px;
+  color: var(--rose-deep);
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  text-align: center;
 }
 
 .video-gift {
