@@ -1,170 +1,185 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For My Sweetest Girl</title>
     <meta
       name="description"
-      content="温柔韩系生日礼物页：韩国旅行 + 一段电影感纪念册"
+      content="一封从瑞典寄来的生日信，以及两份为你准备的小礼物。"
     />
+    <meta name="theme-color" content="#f5eee4" />
+    <title>给最亲爱的你 · 生日快乐</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Ma+Shan+Zheng&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <div class="gift-box reveal">
-        <div class="gift-ribbon ribbon-left"></div>
-        <div class="gift-ribbon ribbon-right"></div>
-        <div class="gift-top"></div>
+    <main class="gift-journey">
+      <section class="opening scene" aria-labelledby="openingTitle">
+        <p class="eyebrow">a little birthday surprise · from sweden with love</p>
+        <h1 id="openingTitle">有一封信，<br />正从远方赶来。</h1>
+        <p class="opening-copy">从瑞典到中国，越过很长的距离，只为在今天抱抱你。</p>
 
-        <div class="book-cover reveal">
-          <div class="cover-inner">
-            <p class="cover-label">for my sweetest girl</p>
-            <h1>Birthday<br />Surprise</h1>
-            <div class="cover-sentence">A little trip. A little film. A lot of love.</div>
+        <div class="journey-map" aria-label="一封信正在从瑞典飞往中国">
+          <div class="map-stop map-sweden">
+            <span class="map-dot"></span>
+            <span>SWEDEN</span>
+          </div>
+          <div class="flight-path" aria-hidden="true">
+            <span class="flight-plane">✈</span>
+          </div>
+          <div class="map-stop map-china">
+            <span class="map-dot"></span>
+            <span>CHINA</span>
           </div>
         </div>
-      </div>
 
-      <main class="book reveal">
-        <section class="book-page page-intro">
-          <div class="page-header">
-            <span>chapter 01</span>
-            <span>our little wish</span>
-          </div>
+        <div class="envelope-scene">
+          <button
+            class="envelope-toggle"
+            id="envelope"
+            type="button"
+            aria-label="点击打开生日信封"
+            aria-expanded="false"
+          >
+            <img
+              class="envelope-image envelope-image-closed"
+              src="assets/envelope-closed.png"
+              alt=""
+              width="1152"
+              height="768"
+              fetchpriority="high"
+            />
+            <img
+              class="envelope-image envelope-image-open"
+              src="assets/envelope-open.png"
+              alt=""
+              width="768"
+              height="960"
+            />
+          </button>
+        </div>
 
-          <h2>
-            这一次，<span>我们去韩国</span><br />
-            也把这份最柔软的心意带走。
-          </h2>
+        <p class="scroll-hint">点击信封图片，打开或合上这封信</p>
+      </section>
 
-          <p>
-            这份礼物里，有你想要的旅行，有我为你准备的浪漫，还有一段我一遍遍剪出来的纪念。
-            只是想让你知道：我想好好陪你走过每一个温柔的瞬间。
-          </p>
-        </section>
+      <section class="gift-section sealed-gift-section scene" id="travelGift" aria-label="一份未拆封的生日惊喜">
+        <button class="sealed-gift" id="revealTravel" aria-controls="travelReveal" aria-expanded="false">
+          <img
+            class="sealed-gift-art gift-art-image"
+            src="assets/birthday-gift-art.png"
+            alt=""
+            aria-hidden="true"
+            width="424"
+            height="496"
+          />
+          <img
+            class="gift-decoration"
+            src="assets/love-letter-decoration.png"
+            alt=""
+            aria-hidden="true"
+            width="608"
+            height="583"
+          />
+          <span class="sealed-gift-label">A LITTLE SOMETHING FOR YOU</span>
+          <span class="sealed-gift-title">这里藏着一份小小的心意</span>
+          <span class="sealed-gift-action">点开看看 <span aria-hidden="true">↓</span></span>
+        </button>
 
-        <section class="book-page page-travel">
-          <div class="page-header">
-            <span>chapter 02</span>
-            <span>korea getaway</span>
-          </div>
-
+        <div class="gift-reveal-content" id="travelReveal" hidden>
+          <div class="section-kicker"><span>GIFT NO. 01</span><span>A LITTLE TRIP FOR TWO</span></div>
           <div class="travel-heading">
-            <div>
-              <p class="tiny">sweet escape</p>
-              <h3>一场轻盈的韩国之旅</h3>
-            </div>
-            <div class="travel-tag">3–4 days</div>
+            <p class="eyebrow">your birthday travel voucher</p>
+            <h2 id="travelTitle">闺蜜旅行，<br /><span>和我一起去韩国玩吧。</span></h2>
+            <svg class="seoul-doodle" viewBox="0 0 360 112" role="img" aria-label="手绘首尔城市风景">
+              <g>
+                <path d="M9 92c35-4 60-2 94 0s72-3 109 0 84-2 139 0" />
+                <path d="M42 90V57l20-15 22 15v33m-34-1V64h25v26m-19-17h5m8 0h5m-18 9h5m8 0h5" />
+                <path d="M105 90V49h26v41m-20-32h5m7 0h3m-15 10h5m7 0h3m-15 10h5m7 0h3" />
+                <path d="M149 90V66h24v24m-18 0V73h12v17m-23-32 17-15 17 15" />
+                <path d="M204 90V38h24v52m-12-52V20m-7 27h5m7 0h5m-17 10h5m7 0h5m-17 10h5m7 0h5" />
+                <path d="M251 90V59h34v31m-26 0V68h18v22m-27-9h-11m50 0h12" />
+                <path d="M292 33c3-10 18-11 23-2 9-1 14 5 12 12h-38c-3-5-1-9 3-10Zm-246-8c3-8 15-9 19-2 7-1 11 4 9 10H40c-2-4-1-7 2-8Z" />
+                <path d="m93 24 3-6m-2 8 7-1m167 5 5-5m-4 9 7 1m-118 55h6" />
+              </g>
+            </svg>
+            <p>这次换我来安排，你只要带上好心情，和我一起出发就好。</p>
           </div>
 
-          <div class="ticket-card">
-            <div class="ticket-top">
-              <span>flight + stay</span>
-              <span>private plan</span>
-            </div>
-            <div class="ticket-main">
-              <div class="ticket-block">
-                <label>departure</label>
-                <strong>seoul</strong>
+          <article class="travel-ticket" aria-label="韩国双人旅行兑换券">
+          <div class="ticket-stub">
+            <span class="stub-top">A BIRTHDAY GIFT</span>
+            <span class="stub-number">01</span>
+            <span class="stub-bottom">ADMIT TWO</span>
+          </div>
+          <div class="ticket-content">
+            <div class="ticket-heading">
+              <div>
+                <p class="ticket-label">A BEST FRIEND GETAWAY</p>
+                <h3>首尔 Seoul</h3>
               </div>
-              <div class="ticket-block center-block">
-                <span class="plane">✈</span>
-              </div>
-              <div class="ticket-block align-right">
-                <label>dream</label>
-                <strong>with you</strong>
-              </div>
+              <span class="ticket-stamp">GOOD<br />FOR TWO</span>
             </div>
-            <div class="ticket-bottom">
-              <span>机票 · 住宿 · 浪漫晚餐</span>
-              <span>pick a date in february</span>
+            <div class="ticket-route">
+              <div><span>FROM</span><strong>中国</strong></div>
+              <span class="route-line" aria-hidden="true"><span>✈</span></span>
+              <div class="route-destination"><span>TO</span><strong>韩国 · 首尔</strong></div>
             </div>
+            <div class="ticket-perks">
+              <div><span aria-hidden="true">✈</span><p><strong>来回机票</strong><small>往返免费</small></p></div>
+              <div><span aria-hidden="true">⌂</span><p><strong>舒适酒店</strong><small>免费入住</small></p></div>
+              <div><span aria-hidden="true">♡</span><p><strong>一顿浪漫晚餐</strong><small>这顿我请客</small></p></div>
+            </div>
+            <div class="ticket-duration"><span>旅行时长</span><strong>4 天 · 3 晚</strong></div>
+            <label class="travel-date" for="travelDate">
+              <span>出发日期</span>
+              <input id="travelDate" type="text" placeholder="等你来填写" aria-label="填写旅行出发日期" />
+            </label>
+            <div class="ticket-footer"><span>ONE TRIP · A THOUSAND MEMORIES</span><span>WITH LOVE, ALWAYS</span></div>
           </div>
+          </article>
+          <p class="ticket-note">日期等你来选，下一次见面，我们就一起把它写下来。</p>
+        </div>
+      </section>
 
-          <label class="date-picker" for="travelDate">
-            <span>choose the date</span>
-            <input id="travelDate" type="date" aria-label="选择旅行日期" />
-          </label>
+      <section class="gift-section sealed-gift-section video-gift scene" id="videoGift" aria-label="另一份未拆封的生日惊喜">
+        <button class="sealed-gift sealed-gift-video" id="openVideo" aria-haspopup="dialog">
+          <img
+            class="sealed-gift-art gift-art-image"
+            src="assets/birthday-gift-art.png"
+            alt=""
+            aria-hidden="true"
+            width="424"
+            height="496"
+          />
+          <span class="sealed-gift-label">SOMETHING ELSE, JUST FOR YOU</span>
+          <span class="sealed-gift-title">还有一份心意，等你发现</span>
+          <span class="sealed-gift-action">点开看看 <span aria-hidden="true">↓</span></span>
+        </button>
+      </section>
 
-          <div class="mini-feature-grid">
-            <div class="mini-item">
-              <span>route</span>
-              <strong>easy & sweet</strong>
-            </div>
-            <div class="mini-item">
-              <span>hotel</span>
-              <strong>cozy stay</strong>
-            </div>
-            <div class="mini-item">
-              <span>dinner</span>
-              <strong>romantic night</strong>
-            </div>
-          </div>
-        </section>
-
-        <section class="book-page page-video">
-          <div class="page-header">
-            <span>chapter 03</span>
-            <span>our little film</span>
-          </div>
-
-          <div class="film-poster" id="playMemory">
-            <div class="play-button">▶</div>
-            <div class="film-text">
-              <p>for you</p>
-              <h3>一段只属于我们的电影</h3>
-            </div>
-          </div>
-
-          <div class="note-box">
-            我把你所有值得被珍藏的瞬间，按最喜欢的节奏剪成了这段小电影。<br />
-            不是很长，但是会一直留在心里。
-          </div>
-
-          <button class="primary-button" id="openVideo">打开我的心意视频</button>
-        </section>
-
-        <section class="final-page reveal">
-          <p class="final-label">birthday wishes</p>
-          <h4>生日快乐，宝贝。</h4>
-          <p>
-            我希望你知道：<br />
-            今天和未来的每一天，我都想认真地陪着你。
-          </p>
-        </section>
-      </main>
-    </div>
+      <footer class="closing-note">
+        <p>不管我们相隔多远，<br />你永远都是我最想分享快乐的人。</p>
+        <span>生日快乐。一直一直，爱你。</span>
+        <span class="footer-heart" aria-hidden="true">♡</span>
+      </footer>
+    </main>
 
     <div class="modal" id="videoModal" aria-hidden="true">
-      <div class="modal-card">
-        <button class="close-btn" id="closeModal" aria-label="关闭">×</button>
-        <div class="modal-header">
-          <span>our little film</span>
-          <h4>一份只属于你的回忆</h4>
-        </div>
-
-        <div class="film-frame">
-          <div class="film-overlay">
-            <div class="film-badge">2026</div>
-            <div class="film-copy">
-              <p>温柔的光</p>
-              <h5>被我剪成了最喜欢的一版</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-foot">
-          <p>把这里替换成你的真实视频链接就好了</p>
-          <button class="primary-button small" id="previewLink">查看视频链接</button>
-        </div>
-      </div>
+      <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="close-btn" id="closeModal" aria-label="关闭视频">×</button>
+        <p class="eyebrow">a little film, made with love</p>
+        <h2 id="modalTitle">给最亲爱的你</h2>
+        <video id="memoryVideo" controls playsinline preload="none">
+          <source src="memory-video.mp4" type="video/mp4" />
+          你的浏览器暂不支持视频播放。
+        </video>
+        <p class="video-help">把你制作的视频命名为 <strong>memory-video.mp4</strong>，放在网页同一文件夹就可以播放。</p>
+      </section>
     </div>
 
     <script src="script.js"></script>

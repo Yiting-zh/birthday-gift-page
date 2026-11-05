@@ -742,3 +742,1738 @@ input {
     width: 100%;
   }
 }
+
+/* Letter-and-gift experience */
+:root {
+  --paper: #fffaf1;
+  --page: #fffaf1;
+  --ink: #412925;
+  --muted: #866d64;
+  --rose-deep: #7e2931;
+  --rose: #a64c4c;
+  --gold: #c69b58;
+  --line: rgba(91, 54, 43, 0.16);
+  --shadow: 0 24px 70px rgba(66, 42, 34, 0.12);
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 50% 4%, rgba(255, 255, 255, 0.94), transparent 38rem),
+    linear-gradient(180deg, #f8f2e9 0%, #efe2d6 100%);
+}
+
+.gift-journey {
+  overflow: hidden;
+}
+
+.opening,
+.gift-preview,
+.gift-section,
+.closing-note {
+  width: min(100% - 40px, 760px);
+  margin-inline: auto;
+}
+
+.opening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: min(900px, 100svh);
+  padding: clamp(54px, 9vh, 90px) 0 44px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--rose-deep);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.21em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.opening h1,
+.travel-heading h2,
+.video-gift h2,
+.letter-paper h2,
+.gift-preview h2,
+.modal-card h2 {
+  font-family: "Cormorant Garamond", "Ma Shan Zheng", serif;
+  font-weight: 600;
+}
+
+.opening h1 {
+  margin: 19px 0 13px;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  letter-spacing: -0.035em;
+  line-height: 0.99;
+}
+
+.opening-copy {
+  max-width: 400px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.9;
+}
+
+.journey-map {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 380px);
+  margin: 28px 0 12px;
+  color: var(--muted);
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+.map-stop {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+}
+
+.map-dot {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--rose-deep);
+  border-radius: 50%;
+  background: #f8f2e9;
+  box-shadow: 0 0 0 5px rgba(126, 41, 49, 0.08);
+}
+
+.flight-path {
+  position: absolute;
+  right: 44px;
+  left: 44px;
+  top: 5px;
+  height: 22px;
+  border-top: 1px dashed rgba(126, 41, 49, 0.5);
+  border-radius: 50%;
+  transform: translateY(3px) rotate(-5deg);
+}
+
+.flight-plane {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  color: var(--rose-deep);
+  font-size: 1.05rem;
+  animation: letter-flight 4.5s ease-in-out infinite;
+}
+
+@keyframes letter-flight {
+  0%, 100% { left: 3%; transform: translateY(7px) rotate(-8deg); }
+  50% { left: 83%; transform: translateY(-2px) rotate(-8deg); }
+}
+
+.envelope-scene {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  width: 100%;
+  min-height: 205px;
+  perspective: 900px;
+}
+
+.envelope {
+  position: relative;
+  width: min(340px, 78vw);
+  height: 190px;
+  filter: drop-shadow(0 20px 20px rgba(89, 49, 41, 0.14));
+}
+
+.envelope-back,
+.envelope-front,
+.envelope-flap,
+.envelope-letter {
+  position: absolute;
+  inset: 0;
+}
+
+.envelope-back {
+  border: 1px solid rgba(95, 55, 45, 0.14);
+  border-radius: 5px;
+  background: #e8d2b8;
+}
+
+.envelope-letter {
+  inset: 10px 13px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 23px;
+  background: #fffaf1;
+  color: var(--rose-deep);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  transition: transform 0.65s 0.18s ease;
+}
+
+.letter-heart {
+  margin-top: 14px;
+  font-family: serif;
+  font-size: 1.5rem;
+}
+
+.envelope-front {
+  background:
+    linear-gradient(145deg, transparent 49.7%, #dfc5a7 50%) left / 51% 100% no-repeat,
+    linear-gradient(215deg, transparent 49.7%, #ead7bf 50%) right / 51% 100% no-repeat,
+    linear-gradient(180deg, transparent 49.5%, #e3cdb1 50%) bottom / 100% 51% no-repeat;
+}
+
+.envelope-flap {
+  z-index: 2;
+  height: 58%;
+  transform-origin: top;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: linear-gradient(160deg, #f0dfc8, #ddc2a3);
+  transition: transform 0.65s ease;
+}
+
+.wax-seal {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 53%;
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border: 1px solid rgba(255, 238, 216, 0.5);
+  border-radius: 50%;
+  background: #852e34;
+  box-shadow: 0 3px 8px rgba(71, 33, 32, 0.2);
+  color: #f4d8bc;
+  font-family: serif;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.4s ease;
+}
+
+.envelope.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.opened .envelope-letter {
+  transform: translateY(-66px);
+}
+
+.envelope.opened .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.65);
+}
+
+.open-letter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 52px;
+  padding: 0 25px;
+  border: 1px solid rgba(126, 41, 49, 0.25);
+  border-radius: 999px;
+  background: #7e2931;
+  box-shadow: 0 10px 25px rgba(126, 41, 49, 0.15);
+  color: #fffaf1;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.open-letter-button:hover {
+  background: #682129;
+  transform: translateY(-2px);
+}
+
+.scroll-hint {
+  margin: 13px 0 0;
+  color: #967f74;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  opacity: 0.62;
+}
+
+.letter-section {
+  width: min(100% - 40px, 690px);
+  margin: 0 auto;
+  padding: 36px 0 80px;
+  scroll-margin-top: 22px;
+}
+
+.letter-section[hidden] {
+  display: none;
+}
+
+.letter-paper {
+  position: relative;
+  padding: clamp(25px, 7vw, 58px);
+  background:
+    radial-gradient(ellipse at 10% 12%, rgba(177, 137, 90, 0.06), transparent 33%),
+    radial-gradient(ellipse at 90% 90%, rgba(177, 137, 90, 0.07), transparent 35%),
+    #fffaf0;
+  box-shadow: 0 24px 64px rgba(68, 42, 34, 0.13);
+  transform: rotate(-0.4deg);
+}
+
+.letter-border {
+  position: relative;
+  min-height: 495px;
+  padding: 24px clamp(4px, 3vw, 22px);
+  border: 1px solid rgba(122, 70, 50, 0.28);
+  outline: 1px solid rgba(122, 70, 50, 0.13);
+  outline-offset: 5px;
+}
+
+.letter-topline,
+.section-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #8c6b5b;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.postmark {
+  position: absolute;
+  top: 48px;
+  right: 18px;
+  display: grid;
+  width: 65px;
+  height: 65px;
+  place-content: center;
+  border: 1px solid rgba(126, 41, 49, 0.4);
+  border-radius: 50%;
+  color: var(--rose-deep);
+  opacity: 0.75;
+  transform: rotate(12deg);
+}
+
+.postmark span {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.postmark small {
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+}
+
+.letter-salutation {
+  margin: 62px 0 10px;
+  color: #785343;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 1.14rem;
+}
+
+.letter-paper h2 {
+  margin: 0;
+  color: #752c30;
+  font-size: clamp(2.3rem, 7vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.letter-copy {
+  margin-top: 23px;
+  color: #57443d;
+  font-family: "Ma Shan Zheng", serif;
+  font-size: clamp(1rem, 2.4vw, 1.12rem);
+  line-height: 2.05;
+}
+
+.letter-copy p {
+  margin: 0 0 11px;
+}
+
+.letter-signoff {
+  margin: 20px 0 4px;
+  color: #735348;
+  font-family: "Ma Shan Zheng", cursive;
+  text-align: right;
+}
+
+.letter-signoff span {
+  display: block;
+  margin-top: 7px;
+  color: var(--rose-deep);
+  font-size: 1.35rem;
+}
+
+.continue-link {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: var(--rose-deep);
+  font-size: 0.84rem;
+  text-decoration: none;
+}
+
+.gift-preview {
+  padding: 100px 0 106px;
+  text-align: center;
+}
+
+.gift-preview h2,
+.video-gift h2 {
+  margin: 13px 0 0;
+  font-size: clamp(2.55rem, 7vw, 4rem);
+  line-height: 1.05;
+}
+
+.gift-preview h2 span,
+.travel-heading h2 span,
+.video-gift h2 span {
+  color: var(--rose-deep);
+}
+
+.gift-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.gift-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 255px;
+  padding: 25px 16px 21px;
+  border: 1px solid rgba(93, 56, 42, 0.12);
+  border-radius: 5px;
+  background: rgba(255, 250, 241, 0.67);
+  box-shadow: 0 15px 38px rgba(66, 42, 34, 0.06);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gift-cue:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(66, 42, 34, 0.11);
+}
+
+.mini-gift {
+  position: relative;
+  display: grid;
+  width: 92px;
+  height: 76px;
+  margin: 9px 0 17px;
+  place-items: center;
+  border-radius: 4px;
+  color: #fff2df;
+  font-size: 1.6rem;
+}
+
+.mini-gift::before,
+.mini-gift::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 236, 208, 0.76);
+}
+
+.mini-gift::before {
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 6px);
+  width: 12px;
+}
+
+.mini-gift::after {
+  top: 12px;
+  right: 0;
+  left: 0;
+  height: 10px;
+}
+
+.mini-gift span {
+  position: relative;
+  z-index: 1;
+  margin-top: 19px;
+}
+
+.mini-gift-rose {
+  background: linear-gradient(145deg, #a55255, #762a34);
+}
+
+.mini-gift-green {
+  background: linear-gradient(145deg, #78806a, #515a4d);
+}
+
+.gift-number {
+  color: var(--rose-deep);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+.gift-cue strong {
+  margin-top: 9px;
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 1.12rem;
+  font-weight: 400;
+}
+
+.gift-cue-link {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 15px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.gift-section {
+  padding: 62px 0 78px;
+  scroll-margin-top: 28px;
+}
+
+.section-kicker {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.travel-heading {
+  display: block;
+  margin: 44px auto 29px;
+  text-align: center;
+}
+
+.travel-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(2.6rem, 7.5vw, 4.3rem);
+  line-height: 1.03;
+}
+
+.travel-heading > p:last-child {
+  max-width: 450px;
+  margin: 15px auto 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.travel-ticket {
+  display: grid;
+  grid-template-columns: 67px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(108, 72, 53, 0.25);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at top right, rgba(206, 166, 112, 0.1), transparent 45%),
+    #fffaf1;
+  box-shadow: 0 22px 56px rgba(68, 42, 34, 0.12);
+}
+
+.ticket-stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 10px;
+  border-right: 1px dashed rgba(126, 41, 49, 0.34);
+  background: rgba(126, 41, 49, 0.055);
+  color: var(--rose-deep);
+  text-align: center;
+}
+
+.stub-top,
+.stub-bottom {
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+}
+
+.stub-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.15rem;
+}
+
+.ticket-content {
+  min-width: 0;
+  padding: clamp(20px, 5vw, 38px);
+}
+
+.ticket-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticket-label,
+.ticket-route > div > span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.ticket-heading h3 {
+  margin: 7px 0 0;
+  color: var(--rose-deep);
+  font-family: "Cormorant Garamond", "Ma Shan Zheng", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+.ticket-stamp {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-content: center;
+  border: 1px solid rgba(126, 41, 49, 0.42);
+  border-radius: 50%;
+  color: var(--rose-deep);
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.ticket-route {
+  display: grid;
+  grid-template-columns: auto minmax(35px, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  margin-top: 24px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ticket-route > div {
+  display: grid;
+  gap: 5px;
+}
+
+.ticket-route strong {
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.route-destination {
+  text-align: right;
+}
+
+.route-line {
+  position: relative;
+  height: 1px;
+  border-top: 1px dashed rgba(126, 41, 49, 0.45);
+  color: var(--rose-deep);
+  text-align: center;
+}
+
+.route-line span {
+  position: relative;
+  top: -13px;
+  padding: 0 8px;
+  background: #fffaf1;
+}
+
+.ticket-perks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  padding: 21px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ticket-perks > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ticket-perks > div > span {
+  color: var(--rose-deep);
+  font-size: 1.1rem;
+}
+
+.ticket-perks p {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+}
+
+.ticket-perks strong {
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 0.86rem;
+  font-weight: 400;
+}
+
+.ticket-perks small {
+  color: var(--muted);
+  font-size: 0.63rem;
+}
+
+.ticket-duration,
+.travel-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: #6d554b;
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 0.88rem;
+}
+
+.ticket-duration {
+  padding: 16px 0 4px;
+}
+
+.ticket-duration strong {
+  color: var(--rose-deep);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+.travel-date {
+  min-height: 48px;
+  margin-top: 5px;
+}
+
+.travel-date input {
+  width: min(57%, 240px);
+  min-height: 36px;
+  padding: 4px 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(126, 41, 49, 0.6);
+  border-radius: 0;
+  outline-offset: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 0.9rem;
+}
+
+.travel-date input::placeholder {
+  color: #ab9388;
+}
+
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  color: #977d6e;
+  font-size: 0.49rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.ticket-note {
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 0.96rem;
+  text-align: center;
+}
+
+.video-gift {
+  padding-top: 54px;
+  text-align: center;
+}
+
+.sealed-gift-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 470px;
+}
+
+.sealed-gift-section.has-revealed-gift {
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.sealed-gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 430px);
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 28px 20px 24px;
+  border: 1px solid rgba(93, 56, 42, 0.14);
+  border-radius: 6px;
+  background: rgba(255, 250, 241, 0.83);
+  box-shadow: 0 18px 45px rgba(66, 42, 34, 0.08);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    max-height 0.45s ease,
+    min-height 0.45s ease,
+    margin 0.45s ease,
+    padding 0.45s ease,
+    border-width 0.45s ease,
+    opacity 0.35s ease;
+}
+
+.sealed-gift:hover {
+  transform: translateY(-4px);
+  background: #fffaf1;
+  box-shadow: 0 24px 48px rgba(66, 42, 34, 0.13);
+}
+
+.sealed-gift:focus-visible {
+  outline: 2px solid var(--rose-deep);
+  outline-offset: 4px;
+}
+
+.sealed-gift.is-collapsing {
+  min-height: 0;
+  max-height: 0;
+  margin-block: 0;
+  padding-block: 0;
+  border-width: 0;
+  opacity: 0;
+  transform: scaleY(0.85);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sealed-gift-art {
+  position: relative;
+  display: grid;
+  width: 96px;
+  height: 83px;
+  margin: 8px 0 22px;
+  place-items: center;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #a55255, #762a34);
+  box-shadow: 0 12px 20px rgba(89, 49, 41, 0.17);
+  color: #fff2df;
+  font-family: serif;
+  font-size: 1.65rem;
+  transition: transform 0.3s ease;
+}
+
+.sealed-gift:hover .sealed-gift-art {
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+.sealed-gift.is-opened,
+.sealed-gift.is-opened:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: default;
+  transform: none;
+}
+
+.sealed-gift.is-opened .sealed-gift-art {
+  transform: translateY(-2px);
+}
+
+.sealed-gift-art::before,
+.sealed-gift-art::after {
+  position: absolute;
+  content: "";
+  background: #e8c89f;
+}
+
+.sealed-gift-art::before {
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 6px);
+  width: 12px;
+}
+
+.sealed-gift-art::after {
+  top: 14px;
+  right: 0;
+  left: 0;
+  height: 10px;
+}
+
+.sealed-gift-art span {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+}
+
+.sealed-gift-label {
+  color: var(--rose-deep);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+.sealed-gift-title {
+  margin-top: 10px;
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 1.14rem;
+}
+
+.sealed-gift-action {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 17px;
+  color: var(--muted);
+  font-size: 0.73rem;
+}
+
+.gift-reveal-content[hidden] {
+  display: none;
+}
+
+.gift-reveal-content.is-revealed {
+  animation: gift-appear 0.65s both;
+}
+
+@keyframes gift-appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.video-gift > .eyebrow {
+  margin-top: 47px;
+}
+
+.video-intro {
+  max-width: 440px;
+  margin: 17px auto 30px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.video-gift-button {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: min(100%, 530px);
+  min-height: 176px;
+  margin: 0 auto;
+  padding: 22px 28px;
+  border: 1px solid rgba(93, 56, 42, 0.13);
+  border-radius: 7px;
+  background: #fffaf1;
+  box-shadow: 0 18px 45px rgba(66, 42, 34, 0.09);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-gift-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 23px 48px rgba(66, 42, 34, 0.14);
+}
+
+.video-gift-art {
+  position: relative;
+  display: grid;
+  flex: 0 0 114px;
+  height: 110px;
+  place-items: center;
+}
+
+.video-gift-box {
+  display: grid;
+  width: 86px;
+  height: 69px;
+  place-items: center;
+  border: 5px solid #fff0dc;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #7d3540, #9f5051);
+  box-shadow: 0 12px 18px rgba(89, 49, 41, 0.15);
+  color: #fff2df;
+  font-size: 1.3rem;
+}
+
+.video-gift-box::after {
+  position: absolute;
+  width: 9px;
+  height: 69px;
+  content: "";
+  background: #e8c89f;
+}
+
+.video-gift-bow {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  width: 44px;
+  height: 25px;
+  border: 5px solid #d5b17e;
+  border-radius: 50% 50% 5px 50%;
+  transform: rotate(-15deg);
+}
+
+.video-button-copy {
+  display: grid;
+  gap: 7px;
+}
+
+.video-button-copy small {
+  color: var(--rose-deep);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.video-button-copy strong {
+  font-family: "Ma Shan Zheng", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.video-button-copy > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.closing-note {
+  position: relative;
+  padding: 86px 0 95px;
+  color: #674d42;
+  text-align: center;
+}
+
+.closing-note p {
+  margin: 0;
+  font-family: "Ma Shan Zheng", serif;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  line-height: 1.8;
+}
+
+.closing-note > span:not(.footer-heart) {
+  display: block;
+  margin-top: 17px;
+  color: var(--rose-deep);
+  font-size: 0.82rem;
+}
+
+.footer-heart {
+  display: block;
+  margin-top: 20px;
+  color: var(--rose-deep);
+  font-size: 1.4rem;
+}
+
+.js .scene {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .scene.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .letter-section {
+  transition-delay: 0.1s;
+}
+
+.modal {
+  z-index: 20;
+  padding: 18px;
+  background: rgba(47, 33, 29, 0.58);
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.visible {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.modal-card {
+  width: min(700px, 100%);
+  max-height: min(90vh, 850px);
+  overflow: auto;
+  padding: clamp(24px, 5vw, 40px);
+  border: 1px solid rgba(93, 56, 42, 0.17);
+  border-radius: 8px;
+  background: #fffaf1;
+}
+
+.modal-card h2 {
+  margin: 8px 45px 22px 0;
+  color: var(--rose-deep);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.modal-card video {
+  display: block;
+  width: 100%;
+  max-height: 62vh;
+  border-radius: 4px;
+  background: #211a19;
+}
+
+.video-help {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.7;
+}
+
+.close-btn {
+  z-index: 1;
+  background: rgba(126, 41, 49, 0.1);
+}
+
+@media (max-width: 560px) {
+  .opening,
+  .gift-preview,
+  .gift-section,
+  .closing-note {
+    width: min(100% - 32px, 760px);
+  }
+
+  .opening {
+    min-height: 100svh;
+    padding-top: 50px;
+  }
+
+  .opening h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .journey-map {
+    margin-top: 26px;
+  }
+
+  .envelope {
+    height: 166px;
+  }
+
+  .letter-section {
+    width: min(100% - 32px, 690px);
+  }
+
+  .letter-paper {
+    padding: 18px;
+  }
+
+  .letter-border {
+    min-height: 0;
+    padding: 18px 13px 22px;
+  }
+
+  .letter-topline {
+    font-size: 0.48rem;
+  }
+
+  .postmark {
+    top: 42px;
+    right: 12px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .letter-salutation {
+    margin-top: 64px;
+  }
+
+  .gift-preview-grid {
+    gap: 10px;
+  }
+
+  .gift-cue {
+    min-height: 237px;
+    padding-inline: 9px;
+  }
+
+  .gift-cue strong {
+    font-size: 0.94rem;
+  }
+
+  .gift-section {
+    padding-top: 48px;
+  }
+
+  .sealed-gift-section {
+    min-height: 410px;
+  }
+
+  .sealed-gift {
+    min-height: 280px;
+  }
+
+  .section-kicker {
+    font-size: 0.49rem;
+  }
+
+  .ticket-stub {
+    padding-inline: 6px;
+  }
+
+  .ticket-content {
+    padding: 19px 15px;
+  }
+
+  .ticket-perks {
+    gap: 6px;
+  }
+
+  .ticket-perks > div {
+    display: grid;
+    gap: 5px;
+  }
+
+  .ticket-perks strong {
+    font-size: 0.78rem;
+  }
+
+  .ticket-perks small {
+    font-size: 0.57rem;
+  }
+
+  .ticket-footer {
+    font-size: 0.42rem;
+  }
+
+  .video-gift-button {
+    gap: 12px;
+    min-height: 150px;
+    padding: 15px 13px;
+  }
+
+  .video-gift-art {
+    flex-basis: 95px;
+    transform: scale(0.86);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: #f7f0e5;
+  background-image:
+    linear-gradient(rgba(255, 252, 246, 0.1), rgba(255, 252, 246, 0.1)),
+    url("assets/floral-paper-pattern.png");
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+.eyebrow,
+.letter-topline,
+.section-kicker,
+.ticket-label,
+.ticket-footer,
+.sealed-gift-label,
+.video-button-copy small,
+.modal-header span {
+  font-family: "Caveat", "DM Sans", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+}
+
+.opening h1,
+.travel-heading h2,
+.letter-paper h2,
+.gift-preview h2,
+.video-gift h2,
+.modal-card h2 {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+.opening h1 {
+  text-shadow: 2px 2px 0 rgba(155, 94, 72, 0.08);
+}
+
+.opening-copy,
+.travel-heading > p:last-child,
+.letter-copy,
+.ticket-note,
+.closing-note p {
+  font-family: "Ma Shan Zheng", cursive;
+}
+
+.opening {
+  position: relative;
+}
+
+.opening::before,
+.opening::after {
+  position: absolute;
+  z-index: -1;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(126, 41, 49, 0.09);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.opening::before {
+  top: 13%;
+  left: -175px;
+}
+
+.opening::after {
+  right: -180px;
+  bottom: 11%;
+  width: 245px;
+  height: 245px;
+}
+
+.envelope-scene {
+  position: relative;
+}
+
+.envelope-doodle {
+  position: absolute;
+  left: max(-80px, calc(50% - 290px));
+  bottom: 16px;
+  width: clamp(92px, 17vw, 150px);
+  overflow: visible;
+  fill: none;
+  stroke: #8b755d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+  opacity: 0.68;
+  transform: rotate(-8deg);
+}
+
+.envelope-doodle path:last-child {
+  stroke: #a64c4c;
+}
+
+.envelope {
+  filter: drop-shadow(0 17px 15px rgba(89, 49, 41, 0.13));
+}
+
+.envelope-back {
+  background:
+    repeating-linear-gradient(45deg, transparent 0 7px, rgba(125, 53, 56, 0.035) 7px 8px),
+    #e8d2b8;
+}
+
+.envelope-flap {
+  background:
+    repeating-linear-gradient(-40deg, transparent 0 8px, rgba(125, 53, 56, 0.035) 8px 9px),
+    linear-gradient(160deg, #f0dfc8, #ddc2a3);
+}
+
+.letter-paper {
+  background:
+    radial-gradient(ellipse at 10% 12%, rgba(177, 137, 90, 0.08), transparent 33%),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(151, 118, 91, 0.045) 31px 32px),
+    #fffaf0;
+}
+
+.letter-border {
+  border: 1px solid rgba(122, 70, 50, 0.32);
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
+.letter-copy {
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+}
+
+.letter-sprig {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 72px;
+  fill: none;
+  stroke: #9b6456;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+  opacity: 0.56;
+  transform: rotate(12deg);
+}
+
+.sealed-gift {
+  position: relative;
+  border: 1px solid rgba(117, 78, 55, 0.24);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(201, 168, 126, 0.11), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 8px, rgba(116, 79, 56, 0.025) 8px 9px),
+    #fffaf1;
+}
+
+.sealed-gift::before,
+.sealed-gift::after {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  content: "";
+  opacity: 0.5;
+}
+
+.sealed-gift::before {
+  top: 10px;
+  left: 10px;
+  border-top: 1px solid #a87c5a;
+  border-left: 1px solid #a87c5a;
+}
+
+.sealed-gift::after {
+  right: 10px;
+  bottom: 10px;
+  border-right: 1px solid #a87c5a;
+  border-bottom: 1px solid #a87c5a;
+}
+
+.sealed-gift-art {
+  border-radius: 3px 6px 4px 5px;
+  box-shadow: 0 11px 18px rgba(89, 49, 41, 0.14), inset 0 0 0 1px rgba(255, 242, 223, 0.25);
+  transform: rotate(-1.5deg);
+}
+
+.sealed-gift-art svg {
+  position: absolute;
+  z-index: 2;
+  top: -25px;
+  left: -7px;
+  width: 110px;
+  height: 52px;
+  overflow: visible;
+  fill: none;
+  stroke: #e9cda6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.sealed-gift-art > span {
+  font-size: 1.15rem;
+  text-shadow: 0 1px 3px rgba(59, 31, 28, 0.25);
+}
+
+.sealed-gift-art.gift-art-image {
+  width: 138px;
+  height: 138px;
+  margin: 0 0 8px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 8px rgba(89, 49, 41, 0.12));
+  object-fit: contain;
+}
+
+.gift-decoration {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  width: 94px;
+  height: auto;
+  opacity: 0.24;
+  pointer-events: none;
+  transform: rotate(8deg);
+}
+
+.sealed-gift > span {
+  position: relative;
+  z-index: 1;
+}
+
+.sealed-gift-title,
+.gift-cue strong,
+.video-button-copy strong {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+}
+
+.travel-heading h2 {
+  font-size: clamp(2.45rem, 7vw, 3.8rem);
+  line-height: 1.18;
+}
+
+.seoul-doodle {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 14px auto 8px;
+  overflow: visible;
+  fill: none;
+  stroke: #74806a;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.65;
+}
+
+.seoul-doodle path:nth-child(even) {
+  stroke: #a96555;
+}
+
+.seoul-doodle path:last-child {
+  stroke: #c29661;
+  stroke-dasharray: 1 4;
+  stroke-width: 2;
+}
+
+.travel-ticket {
+  position: relative;
+  border: 1px solid rgba(108, 72, 53, 0.36);
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(151, 118, 91, 0.035) 27px 28px),
+    radial-gradient(ellipse at 85% 15%, rgba(206, 166, 112, 0.14), transparent 45%),
+    #fffaf1;
+}
+
+.ticket-stub {
+  border-right-style: dashed;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 7px, rgba(126, 41, 49, 0.04) 7px 8px),
+    rgba(126, 41, 49, 0.045);
+}
+
+.ticket-content {
+  position: relative;
+}
+
+.ticket-stamp {
+  border-style: dashed;
+  font-family: "Caveat", cursive;
+  font-size: 0.68rem;
+}
+
+.ticket-perks > div > span {
+  font-family: "Ma Shan Zheng", cursive;
+}
+
+.ticket-perks strong,
+.ticket-duration,
+.travel-date {
+  font-family: "Ma Shan Zheng", cursive;
+}
+
+.closing-note {
+  position: relative;
+  border-top: 1px dashed rgba(126, 41, 49, 0.22);
+}
+
+.closing-note::before,
+.closing-note::after {
+  position: absolute;
+  top: -8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f7f0e5;
+  content: "";
+}
+
+.closing-note::before {
+  left: 0;
+}
+
+.closing-note::after {
+  right: 0;
+}
+
+@media (max-width: 560px) {
+  .envelope-doodle {
+    left: -6px;
+    bottom: 4px;
+    width: 83px;
+    opacity: 0.48;
+  }
+
+  .ticket-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .letter-sprig {
+    width: 52px;
+    opacity: 0.4;
+  }
+}
+
+.floral-art {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.letter-paper {
+  isolation: isolate;
+}
+
+.floral-letter {
+  right: auto;
+  bottom: -34px;
+  left: -72px;
+  width: clamp(105px, 17vw, 150px);
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 8px 12px rgba(89, 49, 41, 0.09));
+}
+
+.letter-border {
+  z-index: 1;
+}
+
+.gift-reveal-content {
+  position: relative;
+  isolation: isolate;
+}
+
+.floral-travel {
+  right: -102px;
+  bottom: -52px;
+  width: clamp(125px, 19vw, 170px);
+  transform: rotate(8deg);
+}
+
+.travel-ticket,
+.ticket-note {
+  position: relative;
+  z-index: 1;
+}
+
+.video-gift {
+  position: relative;
+  isolation: isolate;
+}
+
+.floral-video {
+  top: 50%;
+  right: -46px;
+  width: clamp(125px, 19vw, 170px);
+  transform: translateY(-42%) rotate(-5deg);
+}
+
+.sealed-gift {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 560px) {
+  .floral-letter {
+    bottom: -16px;
+    left: 0;
+    width: 92px;
+  }
+
+  .floral-travel {
+    right: -48px;
+    bottom: -30px;
+    width: 100px;
+    opacity: 0.86;
+  }
+
+  .floral-video {
+    top: 22px;
+    right: -7px;
+    width: 82px;
+    transform: rotate(-5deg);
+  }
+
+  .letter-topline {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+.envelope-scene {
+  flex: none;
+  width: min(100%, 430px);
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  margin: 18px auto 0;
+}
+
+.envelope-toggle {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  filter: drop-shadow(0 18px 22px rgba(89, 49, 41, 0.16));
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope-toggle:focus-visible {
+  outline: 3px solid rgba(126, 41, 49, 0.65);
+  outline-offset: 5px;
+}
+
+.envelope-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  backface-visibility: hidden;
+  transition:
+    opacity 0.55s ease,
+    transform 0.75s cubic-bezier(0.2, 0.75, 0.25, 1),
+    filter 0.75s ease;
+}
+
+.envelope-image-closed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.envelope-image-open {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(-12deg) translateY(12px) scale(0.96);
+}
+
+.envelope-toggle:not(.is-opened):hover .envelope-image-closed {
+  transform: translateY(-5px) scale(1.015);
+}
+
+.envelope-toggle.is-opened .envelope-image-closed {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(12deg) translateY(-12px) scale(0.94);
+  filter: blur(2px);
+}
+
+.envelope-toggle.is-opened .envelope-image-open {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0) translateY(0) scale(1);
+}
